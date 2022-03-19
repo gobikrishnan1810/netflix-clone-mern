@@ -36,6 +36,32 @@ app.get('/google/callback',
     // Successful authentication, redirect home.
     res.redirect('/home');
   });
+  // server static assets if in production
+if(process.env.NODE_ENV === 'production'){    
+  app.use(express.static('frontend/build'))  // set static folder 
+  //returning frontend for any route other than api 
+  app.get('*',(req,res)=>{     
+      res.sendFile (path.resolve(__dirname,'frontend','build',         
+                    'index.html' ));    
+  });
+}
+
+3. Writing scripts in package.json file for our app to work.
+
+Open your package.json file and write the following script to start the server and build process whenever we deploy our app.
+
+  To start node server write the following code :
+
+“scripts":{
+  “start”:"nodemon server.js",}
+
+  Post build script for our frontend to install the npm libraries needed and building the app (if your React project name is client, then use client instead of frontend).
+
+
+   
+  
+  
+
 // server
 app.listen(config.port, () => console.log(`*** Server running on port ${config.port} ***`));
 

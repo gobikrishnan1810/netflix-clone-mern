@@ -35,7 +35,7 @@ const TVShowDetails = ({ name, vote_average, genres, number_of_seasons, year, ov
                 ))}
                 <Paper className={classes.infos}>{year}</Paper>
                 <Paper className={classes.infos}>
-                    {`${number_of_seasons} saison${(number_of_seasons > 1 )? "s" : ""}`}
+                    {`${number_of_seasons} season${(number_of_seasons > 1 )? "s" : ""}`}
                 </Paper>
             </Grid>
             <Grid item xs={12}>

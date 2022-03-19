@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosinstance from "../axios";
 import {
     BROWSE_HOME_LOAD,
     BROWSE_MOVIES_LOAD,
@@ -15,7 +15,7 @@ import { BROWSE_HOME, BROWSE_MOVIES, BROWSE_TVSHOWS } from "../constants/api";
 export const getBrowseHome = () => async (dispatch) => {
     try {
         dispatch({ type: BROWSE_HOME_LOAD });
-        const results = await axios.get(BROWSE_HOME);
+        const results = await axiosinstance.get(BROWSE_HOME);
         dispatch({
             type: BROWSE_HOME_SUCCESS,
             payload: results.data,
@@ -31,7 +31,7 @@ export const getBrowseHome = () => async (dispatch) => {
 export const getBrowseMovies = () => async (dispatch) => {
     try {
         dispatch({ type: BROWSE_MOVIES_LOAD });
-        const results = await axios.get(BROWSE_MOVIES);
+        const results = await axiosinstance.get(BROWSE_MOVIES);
         dispatch({
             type: BROWSE_MOVIES_SUCCESS,
             payload: results.data,
@@ -47,7 +47,7 @@ export const getBrowseMovies = () => async (dispatch) => {
 export const getBrowseTVShows = () => async (dispatch) => {
     try {
         dispatch({ type: BROWSE_TVSHOWS_LOAD });
-        const results = await axios.get(BROWSE_TVSHOWS);
+        const results = await axiosinstance.get(BROWSE_TVSHOWS);
         dispatch({
             type: BROWSE_TVSHOWS_SUCCESS,
             payload: results.data,
