@@ -4,7 +4,7 @@
   "description": "streaming website",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently \"babel-node server\" \"cd client && npm start\"",
+    "start": "concurrently \"node index.js\" \"cd client && npm start\"",
     "dev": "concurrently \"nodemon --exec node_modules/.bin/babel-node server\" \"cd client && npm start\"",
     "server": "nodemon --exec node_modules/.bin/babel-node server",
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
