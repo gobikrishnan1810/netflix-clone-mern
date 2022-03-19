@@ -1,4 +1,3 @@
-import "./config/env";
 import express from "express";
 import cors from "cors";
 import connectDB from "./config/connectDB.js";
@@ -10,7 +9,7 @@ import passport from "passport";
 import morgan from "morgan";
 import config from "./config";
 import "./config/passport";
-
+import "./config/env.js";
 const app = express();
 connectDB(); // connect DB
 
