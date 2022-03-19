@@ -46,23 +46,9 @@ if(process.env.NODE_ENV === 'production'){
   });
 }
 
-3. Writing scripts in package.json file for our app to work.
-
-Open your package.json file and write the following script to start the server and build process whenever we deploy our app.
-
-  To start node server write the following code :
-
-“scripts":{
-  “start”:"nodemon server.js",}
-
-  Post build script for our frontend to install the npm libraries needed and building the app (if your React project name is client, then use client instead of frontend).
-
 
    
-  
-  
-
-// server
+  // server
 app.listen(config.port, () => console.log(`*** Server running on port ${config.port} ***`));
 
 process.on("SIGINT", () => process.exit(1));

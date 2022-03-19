@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "streaming website",
   "main": "server.js",
+  "type":"module",
   "scripts": {
     "start": "concurrently \"node index.js\" \"cd client && npm start\"",
     "dev": "concurrently \"nodemon --exec node_modules/.bin/babel-node server\" \"cd client && npm start\"",
