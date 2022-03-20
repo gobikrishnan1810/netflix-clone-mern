@@ -2,7 +2,7 @@
   "name": "netflix",
   "version": "1.0.0",
   "description": "streaming website",
-  "main": "server.js",
+  "main": "index.js",
   "type":"module",
   "scripts": {
     "start": "concurrently \"node index.js\" \"cd client && npm start\"",
