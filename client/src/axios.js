@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosinstance= axios.create({
-    baseURL:"http://localhost:8080/"
+    baseURL:"https://netflix-mernclone.herokuapp.com/"
 });
 
 export default axiosinstance;
