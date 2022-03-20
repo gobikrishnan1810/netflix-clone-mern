@@ -7,8 +7,8 @@ import movieRoute from "./routes/movie.routes.js";
 import tvshowRoute from "./routes/tvshow.routes.js";
 import passport from "passport";
 import morgan from "morgan";
-import config from "./config";
-import "./config/passport";
+import config from "./config/index.js";
+import "./config/passport.js";
 import "./config/env.js";
 const app = express();
 connectDB(); // connect DB
@@ -37,10 +37,10 @@ app.get('/google/callback',
   });
 
   if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'mappinapp', 'build')));
+    app.use(express.static(path.join(__dirname, 'client', 'build')));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'mappinapp', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
 
