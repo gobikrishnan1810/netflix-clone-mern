@@ -8,7 +8,7 @@ const signUp = async (req, res) => {
         const { firstName, lastName, email, password } = req.body;
         let user = await User.findOne({ email });
         if (user) {
-            return res.status(400).json({ success: false, msg: "L'email est déjà utilisé" });
+            return res.status(400).json({ success: false, msg: "user is already registered" });
         }
         user = new User({ firstName, lastName, email, password });
         const salt = await bcrypt.genSalt(10);
@@ -38,12 +38,12 @@ const signIn = async (req, res) => {
     try {
         let user = await User.findOne({ email });
         if (!user) {
-            return res.status(400).json([{ msg: "Email ou mot de passe incorrect" }]);
+            return res.status(400).json([{ msg: "Email or password is incorrect" }]);
         }
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
-            return res.status(400).json([{ msg: "Email ou mot de passe incorrect" }]);
+            return res.status(400).json([{ msg: "Email or password is incorrect" }]);
         }
 
         const payload = {
@@ -70,7 +70,7 @@ const googleSignIn = (req, res) => {
         };
         const token = jwt.sign(payload, config.jwtSecret, { expiresIn: "7d" });
         res.cookie('auth-cookie',`Bearer ${token}`)
-        res.redirect('http://localhost:3000/browse')
+        res.redirect('https://netflix-mernclone.herokuapp.com/browse')
     } catch (error) {
         res.send([{ msg: err.message }])
     }
