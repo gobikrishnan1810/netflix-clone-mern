@@ -12,7 +12,7 @@ const JWToptions = {
 const googleOptions = {
     clientID: config.googleIdClient,
     clientSecret: config.googleSecret,
-    callbackURL: "http://localhost:8080/api/auth/google/callback",
+    callbackURL: "https://netflix-mernclone.herokuapp.com//api/auth/google/callback",
 };
 
 passport.use(
