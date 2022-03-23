@@ -131,7 +131,7 @@ const SignIn = () => {
                         className={classes.googleBtn}
                         startIcon={<Icon className="fab fa-google" />}
                         component={Link}
-                        href="http://localhost:8080/api/auth/google"
+                        href="https://netflix-mernclone.herokuapp.com/api/auth/google"
                         underline="none"
                     >
                         Signin using google
