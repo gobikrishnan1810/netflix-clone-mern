@@ -68,7 +68,7 @@ const SignIn = () => {
                 <form className={classes.form} onSubmit={formik.handleSubmit}>
                     {error && (
                         <Paper className={classes.error}>
-                            {error.map((elem,k) => (
+                            {error?.map((elem,k) => (
                                 <Typography key={k} component="div" variant="body2">
                                     {elem.msg}
                                 </Typography>
