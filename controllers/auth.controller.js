@@ -70,7 +70,7 @@ const googleSignIn = (req, res) => {
         };
         const token = jwt.sign(payload, config.jwtSecret, { expiresIn: "7d" });
         res.cookie('auth-cookie',`Bearer ${token}`)
-        res.redirect('https://netflix-mernclone.herokuapp.com/browse')
+        res.redirect('https://netflix-mernclone.herokuapp.com')
     } catch (error) {
         res.send([{ msg: err.message }])
     }

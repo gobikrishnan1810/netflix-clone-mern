@@ -18,7 +18,7 @@ const googleOptions = {
 passport.use(
     new JwtStrategy(JWToptions, async (paylaod, done) => {
         try {
-            const user = await User.findById(paylaod.userId).select("-password");
+            const user = await User.findById(paylaod.userId).select("password");
             if (!user) {
                 done(null, false);
             }
