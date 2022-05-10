@@ -1,7 +1,7 @@
 import express from "express"
 import {signIn,signUp, googleSignIn, forgotPassword,resetPassword, getAuthUser} from "../controllers/auth.controller.js";
-import {loginRules,registerRules,validator} from "../middlewares/validator"
-import {auth,authGoogle,authGoogleCallback} from '../middlewares/auth'
+import {loginRules,registerRules,validator} from "../middlewares/validator.js"
+import {auth,authGoogle,authGoogleCallback} from '../middlewares/auth.js'
 
 const router = express.Router();
 
